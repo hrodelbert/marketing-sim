@@ -122,9 +122,9 @@ box_size = 100
 if 'pop' not in st.session_state:
     st.session_state['pop'] = Pop(rows_cols = box_size)
 
-budget = st.sidebar.number_input('Budget', min_value = 1, max_value = 100, value = 10, step = 1)
-spend_per_iteration = st.sidebar.number_input('Spend per iteration', min_value = 1, max_value = 100, value = 1)
-scope_target_per_iteration = st.sidebar.number_input('Target perc', min_value = 0, max_value = 100, value = 50, step = 1)
+budget = st.sidebar.number_input('Budget', min_value = 1, max_value = 100, value = 10, step = 1, help = "The percentage of the population that you can afford to reach in total")
+spend_per_iteration = st.sidebar.number_input('Spend per iteration', min_value = 1, max_value = 100, value = 1, help = "How much of your budget to spend in one hit")
+scope_target_per_iteration = st.sidebar.number_input('Target perc', min_value = 0, max_value = 100, value = 50, step = 1, help = "How wide an area should you spend the amount allotted from your spend this iteration")
 pl = st.empty()
 if st.sidebar.button("Reset"):
     st.session_state['pop'] = Pop()
